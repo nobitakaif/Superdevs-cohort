@@ -32,6 +32,7 @@ impl Deserialize for User{
             println!("vector length -> {}", v.len());
             return Err(Error);
         }
+        // we use diff way to do this, right now doing very ugly way 
         let id = u32::from_be_bytes([v[0],v[1],v[2],v[3]]); // we know array's length is 8 and 0->3 for id and 4->7 for age;
         let age = u32::from_be_bytes([v[4],v[5],v[6],v[7]]);
         
